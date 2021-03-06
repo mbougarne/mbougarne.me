@@ -30,24 +30,34 @@ const Bio = () => {
   const author = data.site.siteMetadata?.author
   const social = data.site.siteMetadata?.social
 
+  let authorName = author.name;
+  let summary = author.summary || '';
+  let { twitter, linkedIn, gitHub } = social;
+
   return (
     <div className="bio">
       <StaticImage
         className="bio-avatar"
         layout="fixed"
         formats={["AUTO", "WEBP", "AVIF"]}
-        src="../images/profile-pic.png"
-        width={50}
-        height={50}
-        quality={95}
-        alt="Profile picture"
+        src="../images/avatar.jpg"
+        width={60}
+        height={60}
+        quality={100}
+        alt="مراد بوكرن"
       />
-      {author?.name && (
+      {authorName && (
         <p>
-          Written by <strong>{author.name}</strong> {author?.summary || null}
+          <strong>{authorName}</strong> {summary}
           {` `}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>
-            You should follow them on Twitter
+          <a href={`https://twitter.com/${twitter}`}>
+            غرد معي
+          </a>
+          <a href={`https://github.com/${linkedIn}`}>
+            برامج
+          </a>
+          <a href={`https://linked.com/${gitHub}`}>
+            لينكدان
           </a>
         </p>
       )}

@@ -1,14 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `مقالات في البرمجة`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `مراد بوكرن`,
+      summary: `نسعى نحو أن نتعلم أكثر.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `مدونة شصخية بالعربية ولربما بالمغربية في كل مايتعلق بالتقنية.`,
+    siteUrl: `https://mbougarne.me/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `BougarneMourad`,
+      linkedIn: `mbougarne`,
+      gitHub: `mbougarne`,
     },
   },
   plugins: [
@@ -16,7 +18,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
+        path: `${__dirname}/content`,
         name: `blog`,
       },
     },
