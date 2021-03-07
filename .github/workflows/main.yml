@@ -23,7 +23,8 @@ jobs:
             git clone https://github.com/mbougarne/mbougarne.me.git gatsby-site
             cd gatsby-site
             npm install
-            npm run build
+            npm run clean && npm run build
             mv -v ./public/* ../public_html/
+            cd ../ && rm -r /gatsby-site
             echo "DONE!"
 
