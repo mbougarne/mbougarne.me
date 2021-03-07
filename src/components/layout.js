@@ -1,5 +1,5 @@
 import * as React from "react"
-import Header from "./header"
+import Header from "./Header"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`

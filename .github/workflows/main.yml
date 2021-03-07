@@ -25,6 +25,7 @@ jobs:
             npm install
             npm run clean && npm run build
             mv -v ./public/* ../public_html/
-            cd ../ && rm -r /gatsby-site
+            cd ../ && rm -r ./gatsby-site
+            chown -R mbougarn:mbougarne ./public_html
             echo "DONE!"
 
