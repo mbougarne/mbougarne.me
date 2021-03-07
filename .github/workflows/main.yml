@@ -20,9 +20,8 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           script: |
             cd /home/mbougarne/
-            mkdir -p gatsby-site
+            git clone https://github.com/mbougarne/mbougarne.me.git gatsby-site
             cd gatsby-site
-            git clone https://github.com/mbougarne/mbougarne.me.git ./
             npm install
             npm run build
             cp ./public ../public_html
