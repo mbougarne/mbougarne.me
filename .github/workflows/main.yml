@@ -1,0 +1,33 @@
+name: C
+
+on:
+  push:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: echo "Passed"
+      - name: SSH Remote Commands
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: ${{ secret.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          script:
+            cd /home/mbougarne/
+            mkdir -p gatsby-site
+            cd gatsby-site
+            npm install
+            npm run build
+            cp ./public ../public_html
+            echo "DONE!"
+
