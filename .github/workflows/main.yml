@@ -24,6 +24,6 @@ jobs:
             cd gatsby-site
             npm install
             npm run build
-            cp ./public ../public_html
+            mv -v ./public ../public_html
             echo "DONE!"
 
