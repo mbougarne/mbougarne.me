@@ -12,8 +12,12 @@ const MainHeading = styles.h1`
   font-size: 2rem;
 `;
 
-const BackToHome = styles.span`
-  color: #ff9f1a;
+const BackToHome = styles.h4`
+  margin: 0;
+  padding: 0;
+  color: #ff3838;
+  text-decoration: none;
+  text-align: left;
 `;
 
 export default function HeaderComponent({ title, isRoot })
@@ -23,9 +27,9 @@ export default function HeaderComponent({ title, isRoot })
     <Link to="/">{title}</Link>
   </MainHeading>)
   :
-  (<Link to="/">
-    <BackToHome>{title}</BackToHome>
-  </Link>)
+  (<BackToHome>
+    <Link to="/">{title + ' >'}</Link>
+  </BackToHome>)
   ;
 
   return (

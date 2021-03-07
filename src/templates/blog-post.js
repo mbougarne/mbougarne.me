@@ -1,9 +1,19 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
+import styles from 'styled-components'
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+
+const TitleHeader = styles.header`
+  margin: 1rem auto;
+  padding: 3em;
+  background: #ff9f1a;
+  font-size: 1.5em;
+  text-align: center;
+  color: white;
+`;
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -21,10 +31,10 @@ const BlogPostTemplate = ({ data, location }) => {
         itemScope
         itemType="http://schema.org/Article"
       >
-        <header>
+        <TitleHeader>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
-        </header>
+        </TitleHeader>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"

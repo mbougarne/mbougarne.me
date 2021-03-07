@@ -1,9 +1,15 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
+import styles from 'styled-components'
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+
+
+const StyledLink = styles(props => <Link {...props} />)`
+  color: #ff3838;
+`;
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -38,9 +44,9 @@ const BlogIndex = ({ data, location }) => {
               >
                 <header>
                   <h2>
-                    <Link to={post.fields.slug} itemProp="url">
+                    <StyledLink to={post.fields.slug} itemProp="url">
                       <span itemProp="headline">{title}</span>
-                    </Link>
+                    </StyledLink>
                   </h2>
                   <small>{post.frontmatter.date}</small>
                 </header>
