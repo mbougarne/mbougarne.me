@@ -9,8 +9,8 @@ module.exports = {
     siteUrl: `https://mbougarne.me/`,
     social: {
       twitter: `BougarneMourad`,
-      linkedIn: `mbougarne`,
-      gitHub: `mbougarne`,
+      linkedin: `mbougarne`,
+      github: `mbougarne`,
     },
   },
   plugins: [
@@ -114,13 +114,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Mourad Bougarne Blog`,
+        short_name: `mbougarne`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#ff9f1a`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/avatar.jpg`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-react-helmet`,

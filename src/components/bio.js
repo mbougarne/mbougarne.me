@@ -39,7 +39,9 @@ const Bio = () => {
             summary
           }
           social {
-            twitter
+            twitter,
+            linkedin,
+            github,
           }
         }
       }
@@ -49,10 +51,10 @@ const Bio = () => {
   // Set these values by editing "siteMetadata" in gatsby-config.js
   const author = data.site.siteMetadata?.author
   const social = data.site.siteMetadata?.social
-
+  console.log(data.site.siteMetadata)
   let authorName = author.name;
   let summary = author.summary || '';
-  let { twitter, linkedIn, gitHub } = social;
+  let { twitter, linkedin, github } = social;
 
   return (
     <div className="bio">
@@ -73,10 +75,10 @@ const Bio = () => {
             <SocialMediaIcon as="a" href={`https://twitter.com/${twitter}`}>
               <Icon brand name="twitter" />
             </SocialMediaIcon>
-            <SocialMediaIcon as="a" href={`https://github.com/${gitHub}`}>
+            <SocialMediaIcon as="a" href={`https://github.com/${github}`}>
               <Icon brand name="github" />
             </SocialMediaIcon>
-            <SocialMediaIcon as="a" href={`https://linkedin.com/${linkedIn}`}>
+            <SocialMediaIcon as="a" href={`https://linkedin.com/${linkedin}`}>
               <Icon brand name="linkedin" />
             </SocialMediaIcon>
           </SocialIcons>
