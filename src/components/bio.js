@@ -8,6 +8,26 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import styles from 'styled-components'
+import Icon from './Icon'
+
+const SocialMediaIcon = styles.button`
+  display: inline-block;
+  color: #ff3838;
+  font-size: 1em;
+  margin: 0.25rem;
+  padding: 0.25em;
+  border: none;
+`;
+
+const AuthorSummary = styles.div`
+  margin-top: .5rem;
+  margin-right: 1rem;
+`;
+
+const SocialIcons = styles.p`
+  margin-top: .5rem;
+`;
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -47,19 +67,20 @@ const Bio = () => {
         alt="مراد بوكرن"
       />
       {authorName && (
-        <p>
+        <AuthorSummary>
           <strong>{authorName}</strong> {summary}
-          {` `}
-          <a href={`https://twitter.com/${twitter}`}>
-            غرد معي
-          </a>
-          <a href={`https://github.com/${linkedIn}`}>
-            برامج
-          </a>
-          <a href={`https://linked.com/${gitHub}`}>
-            لينكدان
-          </a>
-        </p>
+          <SocialIcons>
+            <SocialMediaIcon as="a" href={`https://twitter.com/${twitter}`}>
+              <Icon brand name="twitter" />
+            </SocialMediaIcon>
+            <SocialMediaIcon as="a" href={`https://github.com/${gitHub}`}>
+              <Icon brand name="github" />
+            </SocialMediaIcon>
+            <SocialMediaIcon as="a" href={`https://linkedin.com/${linkedIn}`}>
+              <Icon brand name="linkedin" />
+            </SocialMediaIcon>
+          </SocialIcons>
+        </AuthorSummary>
       )}
     </div>
   )
