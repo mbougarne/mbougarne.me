@@ -12,7 +12,7 @@ const BlogIndex = ({ data, location }) => {
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <SEO title="مراد بوكرن" />
+        <SEO title="الرئيسية" />
         <Bio />
         <p>
           لا يوجد أي محتوى حاليا على المدونة.
@@ -23,7 +23,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+      <SEO title="الرئيسية" />
       <Bio />
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
